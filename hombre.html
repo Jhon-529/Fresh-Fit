@@ -3,90 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda</title>
+    <title>Tienda Hombre</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="header">
-    <h1>ROPA DEPORTIVA</h1>
+    <h1>ROPA DEPORTIVA HOMBRE</h1>
 </header>
 
+<!-- ICONO -->
+<div class="icono-carrito" onclick="toggleCarrito()">
+    🛒 <span id="contador">0</span>
+</div>
+
+<!-- CARRITO MODAL -->
+<div class="carrito-overlay" id="overlay-carrito">
+  <div class="carrito">
+    <div class="carrito-header">
+      <h2>Mi Carrito</h2>
+      <span onclick="toggleCarrito()">✖</span>
+    </div>
+    <div id="lista-carrito"></div>
+    <div class="carrito-footer">
+      <p><span id="cantidad">0</span> artículo(s)</p>
+      <h3>S/ <span id="total">0</span></h3>
+      <button class="btn-ver">Ver el carro</button>
+      <button class="btn-pagar" onclick="checkout()">Tramitar Pedido</button>
+    </div>
+  </div>
+</div>
+
 <div class="contenedor">
-    <div class="icono-carrito" onclick="toggleCarrito()">
-  🛒 <span id="contador">0</span>
-</div>
-
-<div class="carrito" id="carrito">
-  <h2>Carrito</h2>
-  <div id="lista"></div>
-  <p>Total: $<span id="total">0</span></p>
-</div>
-
     <div class="grid">
 
         <div class="card">
             <h3>POLO MANGA LARGA</h3>
             <img src="img/polo1.jpg">
-            <p>$30.00</p>
-            <button>Agregar al carrito</button>
+            <p>S/ 30</p>
+            <button onclick="agregar('POLO MANGA LARGA', 30, 'img/polo1.jpg')">Agregar</button>
         </div>
 
         <div class="card">
             <h3>LICRA</h3>
             <img src="img/polo2.jpg">
-            <p>$25.00</p>
-            <button>Agregar al carrito</button>
+            <p>S/ 25</p>
+            <button onclick="agregar('LICRA', 25, 'img/polo2.jpg')">Agregar</button>
         </div>
 
         <div class="card">
             <h3>CONJUNTO DEPORTIVO NEGRO</h3>
             <img src="img/polo3.jpg">
-            <p>$50.00</p>
-            <button>Agregar al carrito</button>
+            <p>S/ 50</p>
+            <button onclick="agregar('CONJUNTO DEPORTIVO NEGRO', 50, 'img/polo3.jpg')">Agregar</button>
         </div>
 
         <div class="card">
-            <h3>CONJUNT DEPORTIVO BLANCO</h3>
+            <h3>CONJUNTO DEPORTIVO BLANCO</h3>
             <img src="img/polo4.jpg">
-            <p>$15.00</p>
-            <button>Agregar al carrito</button>
+            <p>S/ 15</p>
+            <button onclick="agregar('CONJUNTO DEPORTIVO BLANCO', 15, 'img/polo4.jpg')">Agregar</button>
         </div>
 
         <div class="card">
             <h3>LONG SLEEVE SPORTS SET</h3>
             <img src="img/polo5.jpg">
-            <p>$40.00</p>
-            <button onclick="agregar('CONJUNTO DE GIMNASIO COLOR BLACK, $25.00')">Agregar al carrito</button>
+            <p>S/ 40</p>
+            <button onclick="agregar('LONG SLEEVE SPORTS SET', 40, 'img/polo5.jpg')">Agregar</button>
         </div>
 
         <div class="card">
             <h3>LONG SLEEVE SPORTS SET 2</h3>
             <img src="img/polo6.jpg">
-            <p>$30.00</p>
-            <button onclick="agregar('CONJUNTO DE GIMNASIO COLOR BLACK, $25.00')">Agregar al carrito</button>
+            <p>S/ 30</p>
+            <button onclick="agregar('LONG SLEEVE SPORTS SET 2', 30, 'img/polo6.jpg')">Agregar</button>
         </div>
 
         <div class="card">
             <h3>LONG SLEEVE SPORTS SET 3</h3>
             <img src="img/polo7.jpg">
-            <p>$25.00</p>
-            <button onclick="agregar('CONJUNTO DE GIMNASIO COLOR BLACK, $25.00')">Agregar al carrito</button>
+            <p>S/ 25</p>
+            <button onclick="agregar('LONG SLEEVE SPORTS SET 3', 25, 'img/polo7.jpg')">Agregar</button>
         </div>
 
         <div class="card">
             <h3>LONG SLEEVE SPORTS SET 4</h3>
             <img src="img/polo8.jpg">
-            <p>$15.00</p>
-            <button onclick="agregar('CONJUNTO DE GIMNASIO COLOR BLACK, $25.00')">Agregar al carrito</button>
+            <p>S/ 15</p>
+            <button onclick="agregar('LONG SLEEVE SPORTS SET 4', 15, 'img/polo8.jpg')">Agregar</button>
         </div>
 
-    
-       <div class="buscador">
-  <input type="text" id="buscar" placeholder="Buscar producto...">
-</div>
+    </div>
+
+    <div class="buscador">
+        <input type="text" id="buscar" placeholder="Buscar producto...">
+    </div>
 </div>
 
-    
+<script src="scripts.js"></script>
+
 </body>
 </html>
